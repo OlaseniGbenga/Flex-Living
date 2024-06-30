@@ -1,64 +1,142 @@
 /* Remove default styles start */
 a {
-    text-decoration: none;
-    color: inherit; /* Optionally remove default link color */
-  }
-  
+  text-decoration: none;
+  color: inherit; /* Optionally remove default link color */
+}
 
-  ul, ol {
-    list-style: none;
-  }
+ul,
+ol {
+  list-style: none;
+}
 
-  body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, address, hr, dl, dd, menu, nav {
-    margin: 0;
-    padding: 0;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
- 
-  input, button, textarea, select {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    margin: 0;
-  }
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+code,
+address,
+hr,
+dl,
+dd,
+menu,
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
 
 /* Remove default styles end */
 /* root start */
 :root {
-    /* Primary colors */
-    --green: #49735A;
-    --white: #FFFFFF;
-    --dark-white:#F2F0F2;
-    --black:#000000;
-    --green2:#064749;
+  /* Primary colors */
+  --green: #49735a;
+  --white: #ffffff;
+  --dark-white: #f2f0f2;
+  --black: #000000;
+  --green2: #064749;
 }
 /* root end */
 
 body {
-   background-color: var(--white);
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+  background-color: var(--white);
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
+/* header  start*/
+header {
+  display: flex;
 
-  /* header  start*/
+  padding: 10px 60px;
+  flex-direction: column;
+}
+
+header section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  width: 6rem;
+}
+#destop-nav ul {
+  display: flex;
+  column-gap: 40px;
+  font-weight: 700;
+}
+
+.hamburgerMenu,
+.cancelMenu {
+  width: 1rem;
+  display: none;
+}
+#mobileNavId {
+  align-self: center;
+}
+
+.mobileNav {
+  display: none;
+}
+#mobileNavId ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+
+/* header  end*/
+
+@media (max-width: 768px) {
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 60px;
-    
+    padding: 10px 30px;
+  }
 
+  #logo {
+    width: 6rem;
   }
-  nav ul {
-    display: flex;
-   column-gap: 40px;
-   font-weight: 700;
+  #destop-nav ul {
+    display: none;
   }
-  /* header  end*/
+
+  .hamburgerMenu,
+  .cancelMenu,
+  .mobileNav {
+    display: inline-block;
+  }
+
+  .mobileNavDisplay {
+    display: none;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 365px) {
+  header {
+    padding: 10px 10px;
+  }
+
+  #logo {
+    width: 4rem;
+  }
+}

@@ -15,15 +15,34 @@
   </head>
   <body>
     <header>
-      <img src="./media/images/logo.png" alt="Flex living logo">
-      <nav>
+      <section>
+        <img id="logo" src="./media/images/logo.png" alt="Flex living logo" />
+        <nav id="destop-nav">
+          <ul>
+            <li>Home</li>
+            <li>LandLords</li>
+            <li>Blog</li>
+            <li>Contacts</li>
+          </ul>
+        </nav>
+
+        <img
+          id="hamburgerMenuId"
+          class="hamburgerMenu"
+          src="./media/svg/hamburgerMenu.svg"
+          alt="hamburger menu"
+        />
+        <img id="cancelMenuId" class="cancelMenu mobileNavDisplay" src="./media/svg/cancel.svg" alt="Close menu" />
+      </section>
+      <nav id="mobileNavId" class="mobileNavDisplay mobileNav">
         <ul>
           <li>Home</li>
           <li>LandLords</li>
           <li>Blog</li>
-          <li>Contact</li>
+          <li>Contacts</li>
         </ul>
       </nav>
     </header>
+    <script src="./app.js"></script>
   </body>
 </html>
