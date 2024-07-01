@@ -81,11 +81,45 @@ header section {
 #logo {
   width: 6rem;
 }
+
+/* #destop {
+  padding: 10px 0;
+} */
+
 #destop-nav ul {
+  
   display: flex;
   column-gap: 40px;
   font-weight: 700;
 }
+
+
+
+/*Check start*/
+
+#destop-nav li, #mobileNavId li{
+  color: var(--black);
+  position: relative;
+  padding: 4px 0;
+}
+
+#destop-nav li::after, #mobileNavId li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--black);
+  transition: width 0.3s ease;
+}
+
+#destop-nav li:hover::after, #mobileNavId li:hover::after {
+  width: 100%;
+}
+
+/*Check end*/
+
 
 .hamburgerMenu,
 .cancelMenu {
@@ -94,6 +128,7 @@ header section {
 }
 #mobileNavId {
   align-self: center;
+   font-weight: 700;
 }
 
 .mobileNav {

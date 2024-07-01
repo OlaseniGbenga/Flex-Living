@@ -1,18 +1,11 @@
-hamburgerMenuId.addEventListener("click", () => {
-  if (!hamburgerMenuId.classList.contains("mobileNavDisplay")) {
-    hamburgerMenuId.classList.add("mobileNavDisplay");
-    cancelMenuId.classList.remove("mobileNavDisplay");
-    mobileNavId.classList.remove("mobileNavDisplay");
-  }
-});
+function toggleMenu() {
+  hamburgerMenuId.classList.toggle('mobileNavDisplay');
+  cancelMenuId.classList.toggle('mobileNavDisplay');
+  mobileNavId.classList.toggle('mobileNavDisplay');
+}
 
-cancelMenuId.addEventListener("click", () => {
-  if (!cancelMenuId.classList.contains("mobileNavDisplay")) {
-    hamburgerMenuId.classList.remove("mobileNavDisplay");
-    cancelMenuId.classList.add("mobileNavDisplay");
-    mobileNavId.classList.add("mobileNavDisplay");
-  }
-});
+hamburgerMenuId.addEventListener('click', toggleMenu);
+cancelMenuId.addEventListener('click', toggleMenu);
 
 
 
