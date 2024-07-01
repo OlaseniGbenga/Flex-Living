@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Navigation</title>
+  <style>
+    /* Basic styles for the navigation */
+    #desktop-nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    #desktop-nav li {
+      display: inline;
+    }
+
+    #desktop-nav a {
+      text-decoration: none;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    #desktop-nav a:hover, 
+    #desktop-nav a:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <nav id="desktop-nav" role="navigation" aria-label="Main navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#landlords">Landlords</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

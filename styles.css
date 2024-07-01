@@ -67,8 +67,8 @@ body {
 /* header  start*/
 header {
   display: flex;
-
-  padding: 10px 60px;
+position: relative;
+  padding: 0.625rem 3.75rem;
   flex-direction: column;
 }
 
@@ -82,14 +82,15 @@ header section {
   width: 6rem;
 }
 
-/* #destop {
-  padding: 10px 0;
-} */
 
+#desktop-nav a:focus {
+  outline: 2px solid #00f;
+  background-color: #e0e0e0;
+}
 #destop-nav ul {
   
   display: flex;
-  column-gap: 40px;
+  column-gap: 2.5rem;
   font-weight: 700;
 }
 
@@ -100,7 +101,8 @@ header section {
 #destop-nav li, #mobileNavId li{
   color: var(--black);
   position: relative;
-  padding: 4px 0;
+  padding: 0.25rem 0;
+  cursor: pointer;
 }
 
 #destop-nav li::after, #mobileNavId li::after {
@@ -109,7 +111,7 @@ header section {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
+  height: 0.125rem;
   background-color: var(--black);
   transition: width 0.3s ease;
 }
@@ -125,26 +127,43 @@ header section {
 .cancelMenu {
   width: 1rem;
   display: none;
+  cursor: pointer;
 }
 #mobileNavId {
   align-self: center;
    font-weight: 700;
+   display: none;
+   cursor: pointer;
 }
 
 .mobileNav {
-  display: none;
+  position: absolute;
+  top: -12.5rem;
+  transition: top 0.3s ease-in-out;
+
 }
+
+.open {
+  top: 8rem;
+}
+
 #mobileNavId ul {
   display: flex;
   flex-direction: column;
   row-gap: 1.25rem;
 }
+#mobileNavId ul li {
+  align-self: self-start;
+  
+}
+
 
 /* header  end*/
 
+
 @media (max-width: 768px) {
   header {
-    padding: 10px 30px;
+    padding: 0.625rem 1.875rem;
   }
 
   #logo {
@@ -155,11 +174,14 @@ header section {
   }
 
   .hamburgerMenu,
-  .cancelMenu,
-  .mobileNav {
+  .cancelMenu
+   {
     display: inline-block;
+  
   }
-
+#mobileNavId {
+  display: inline-block;
+}
   .mobileNavDisplay {
     display: none;
   }
@@ -168,7 +190,7 @@ header section {
 /* Mobile styles */
 @media (max-width: 365px) {
   header {
-    padding: 10px 10px;
+    padding: 0.625rem;
   }
 
   #logo {
