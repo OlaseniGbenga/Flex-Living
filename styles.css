@@ -25,7 +25,8 @@ hr,
 dl,
 dd,
 menu,
-nav {
+nav,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -67,7 +68,7 @@ body {
 /* header  start*/
 header {
   display: flex;
-position: relative;
+  position: relative;
   padding: 0.625rem 3.75rem;
   flex-direction: column;
 }
@@ -78,34 +79,32 @@ header section {
   align-items: center;
 }
 
-#logo {
+.logo {
   width: 6rem;
 }
-
 
 #desktop-nav a:focus {
   outline: 2px solid #00f;
   background-color: #e0e0e0;
 }
 #destop-nav ul {
-  
   display: flex;
   column-gap: 2.5rem;
   font-weight: 700;
 }
 
-
-
 /*Check start*/
 
-#destop-nav li, #mobileNavId li{
+#destop-nav li,
+#mobileNavId li {
   color: var(--black);
   position: relative;
   padding: 0.25rem 0;
   cursor: pointer;
 }
 
-#destop-nav li::after, #mobileNavId li::after {
+#destop-nav li::after,
+#mobileNavId li::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -116,12 +115,12 @@ header section {
   transition: width 0.3s ease;
 }
 
-#destop-nav li:hover::after, #mobileNavId li:hover::after {
+#destop-nav li:hover::after,
+#mobileNavId li:hover::after {
   width: 100%;
 }
 
 /*Check end*/
-
 
 .hamburgerMenu,
 .cancelMenu {
@@ -131,16 +130,15 @@ header section {
 }
 #mobileNavId {
   align-self: center;
-   font-weight: 700;
-   display: none;
-   cursor: pointer;
+  font-weight: 700;
+  display: none;
+  cursor: pointer;
 }
 
 .mobileNav {
   position: absolute;
   top: -12.5rem;
   transition: top 0.3s ease-in-out;
-
 }
 
 .open {
@@ -154,19 +152,85 @@ header section {
 }
 #mobileNavId ul li {
   align-self: self-start;
-  
 }
-
 
 /* header  end*/
 
+/*footer start*/
+footer {
+  display: grid;
+  padding: 0.625rem 3.75rem;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 8.75rem;
+}
+
+.socail {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+footer > section:nth-child(1) > img {
+  margin-bottom: 1.625rem;
+}
+
+footer > section:nth-child(1) > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+footer > section:nth-child(2) {
+  display: flex;
+gap: 3.75rem;
+}
+
+footer > section:nth-child(2) > div {
+  display: flex;
+  flex-direction: column;
+gap: 1rem;
+}
+
+
+footer > section:nth-child(2) > div > p:nth-child(1) {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+footer > section:nth-child(2) > div ul {
+  display: flex;
+  flex-direction: column;
+  gap:1rem
+}
+
+
+
+
+
+footer > section:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+footer > section:nth-child(3) > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+footer > section:nth-child(3) > div > p:nth-child(1) {
+  font-weight: bold;
+}
+
+/* footer end*/
 
 @media (max-width: 768px) {
+  /* header  start*/
   header {
     padding: 0.625rem 1.875rem;
   }
 
-  #logo {
+  .logo {
     width: 6rem;
   }
   #destop-nav ul {
@@ -174,26 +238,77 @@ header section {
   }
 
   .hamburgerMenu,
-  .cancelMenu
-   {
+  .cancelMenu {
     display: inline-block;
-  
   }
-#mobileNavId {
-  display: inline-block;
-}
+  #mobileNavId {
+    display: inline-block;
+  }
   .mobileNavDisplay {
     display: none;
   }
+  /* header  end*/
+
+  /*footer start*/
+  footer {
+    padding: 0.625rem 1.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  footer > section:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer > section:nth-child(1) > div {
+    align-items: center;
+  }
+
+  footer > section:nth-child(1) > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer > section:nth-child(2) {
+    flex-direction: column;
+  }
+
+
+  
+
+  footer > section:nth-child(2) > div {
+    display: grid;
+    margin-bottom: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  
+ 
+
+  /* footer end*/
 }
 
 /* Mobile styles */
 @media (max-width: 365px) {
+  /* header  start*/
   header {
     padding: 0.625rem;
   }
 
-  #logo {
+  .logo {
     width: 4rem;
   }
+  /* header  end*/
+
+  /*footer start*/
+
+  footer {
+    padding: 0.625rem;
+  }
+  /* footer end*/
 }
