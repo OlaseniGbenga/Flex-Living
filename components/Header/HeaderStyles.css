@@ -1,0 +1,156 @@
+/* header  start*/
+header {
+    display: flex;
+    position: relative;
+    padding: 0.625rem 3.75rem;
+    flex-direction: column;
+  }
+  
+  header section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo {
+    z-index: 10;
+  }
+  
+  .logo {
+    width: 6rem;
+  }
+  
+  #desktop-nav a:focus {
+    outline: 2px solid #00f;
+    background-color: #e0e0e0;
+  }
+  #destop-nav ul {
+    display: flex;
+    column-gap: 2.5rem;
+    font-weight: 700;
+  }
+  
+  /*Check start*/
+  
+  #destop-nav li,
+  #mobileNavId li {
+    color: var(--black);
+    position: relative;
+    padding: 0.25rem 0;
+    cursor: pointer;
+  }
+  
+  #destop-nav li::after,
+  #mobileNavId li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.125rem;
+    background-color: var(--black);
+    transition: width 0.3s ease;
+  }
+  
+  #destop-nav li:hover::after,
+  #mobileNavId li:hover::after {
+    width: 100%;
+  }
+  
+  /*Check end*/
+  
+  .hamburgerMenu,
+  .cancelMenu {
+    width: 1rem;
+    display: none;
+    cursor: pointer;
+    z-index: 10;
+  }
+  #mobileNavId {
+    align-self: center;
+    font-weight: 700;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .mobileNav {
+    position: absolute;
+    top: -12.5rem;
+    transition: top 0.3s ease-in-out;
+    z-index: 10;
+  }
+  
+  .mobileNavBackDrop {
+    position: fixed;
+    background-color: var(--white);
+    z-index: 5;
+    top: -40rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition:top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  #mobileNavId ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+  }
+  #mobileNavId ul li {
+    align-self: self-start;
+  }
+  
+  /* header  end*/
+
+
+  @media (max-width:768px) {
+
+    /* header  start*/
+  header {
+    padding: 0.625rem 1.875rem;
+  }
+
+  .logo {
+    width: 6rem;
+  }
+  #destop-nav ul {
+    display: none;
+  }
+
+  .hamburgerMenu,
+  .cancelMenu {
+    display: inline-block;
+  }
+  #mobileNavId {
+    display: inline-block;
+  }
+  .mobileNavDisplay {
+    display: none;
+  }
+
+  .open {
+    top: 8rem;
+  }
+
+  .openBackDrop {
+    top: 0;
+    opacity: 1;
+  }
+  /* header  end*/
+    
+  }
+
+
+  @media (max-width:365px){
+
+      /* header  start*/
+  header {
+    padding: 0.625rem;
+  }
+
+  .logo {
+    width: 4rem;
+  }
+  /* header  end*/
+  }

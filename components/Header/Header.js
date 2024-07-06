@@ -1,6 +1,4 @@
-
-
-class Header extends HTMLElement {
+export class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
         <header>
@@ -43,25 +41,19 @@ class Header extends HTMLElement {
       <div id="mobileNavBackDrop" class="mobileNavBackDrop"></div>
     </header>`;
 
+    const hamburgerMenuId = this.querySelector("#hamburgerMenuId");
+    const cancelMenuId = this.querySelector("#cancelMenuId");
+    const mobileNavId = this.querySelector("#mobileNavId");
+    const mobileNavBackDrop = this.querySelector("#mobileNavBackDrop");
 
-    function toggleMenu() {
-        hamburgerMenuId.classList.toggle('mobileNavDisplay');
-        cancelMenuId.classList.toggle('mobileNavDisplay');
-        mobileNavId.classList.toggle('open');
-        mobileNavBackDrop.classList.toggle('openBackDrop')
-      }
-      
-      hamburgerMenuId.addEventListener('click', toggleMenu);
-      cancelMenuId.addEventListener('click', toggleMenu);
+    const toggleMenu = () => {
+      hamburgerMenuId.classList.toggle("mobileNavDisplay");
+      cancelMenuId.classList.toggle("mobileNavDisplay");
+      mobileNavId.classList.toggle("open");
+      mobileNavBackDrop.classList.toggle("openBackDrop");
+    };
+
+    hamburgerMenuId.addEventListener("click", toggleMenu);
+    cancelMenuId.addEventListener("click", toggleMenu);
   }
 }
-
-//Footer
-
-class Footer extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = ``;
-  }
-}
-
-customElements.define("main-header", Header);
