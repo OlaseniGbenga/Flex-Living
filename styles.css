@@ -89,13 +89,33 @@ body {
   display: inline-block;
   border-bottom-right-radius: 40px;
   border-top-right-radius: 40px;
-  padding:3rem  4rem;
-  
+  padding: 3rem 4rem;
 }
 
-#section1 .board h2{
-font-size: 52px;
-font-weight: 700;
-margin-bottom: 20px;
+#section1 .board h2 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 
+@media (max-width: 768px) {
+  #section1 .board {
+    height: 200x;
+    top: 20px;
+    width: 50vw;
+    padding: 0.625rem 1.875rem;
+  }
+
+  #section1 .board h2 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 365px) {
+  #section1 .board {
+    height: 200x;
+    width: 80vw;
+    padding: 0.625rem;
+  }
 }
