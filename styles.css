@@ -64,14 +64,19 @@ select {
 }
 /* root end */
 
-body {
+* {
+  box-sizing: border-box;
+}
+
+body{
   background-color: var(--white);
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
-  box-sizing: border-box;
+  
 }
 
+/*Section1 start*/
 #section1 {
   background-image: url("./media/images/Image.jpg");
   background-size: cover;
@@ -98,7 +103,54 @@ body {
   margin-bottom: 20px;
 }
 
+/*Section1 end*/
+
+/*Section2 start*/
+#section2 {
+  padding: 9rem 3.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#section2 > div:nth-child(1) {
+  background-color: var(--dark-white);
+  height: 340px;
+  width: 100%;
+  border-bottom-left-radius: 40px;
+  border-top-left-radius: 40px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  overflow: hidden;
+  align-content: center;
+}
+
+#section2 img {
+  width: 100%; /* Ensures each image takes up 100% of its grid cell */
+  height: 100%;
+  object-fit: contain; /* Ensures the image covers the entire grid cell */
+  object-position: center; /* Centers the image within its grid cell */
+}
+
+#section2 > div:nth-child(2) {
+  background-color: var(--dark-white);
+  height: 340px;
+  width: 100%;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  justify-content: center;
+}
+
+
+
+/*Section2 end*/
+
 @media (max-width: 768px) {
+  /*Section1 start*/
   #section1 .board {
     height: 200x;
     top: 20px;
@@ -110,12 +162,16 @@ body {
     font-size: 40px;
     font-weight: 700;
   }
+
+  /*Section1 end*/
 }
 
 @media (max-width: 365px) {
+  /*Section1 start*/
   #section1 .board {
     height: 200x;
     width: 80vw;
     padding: 0.625rem;
   }
+  /*Section1 end*/
 }
