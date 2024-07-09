@@ -35,6 +35,8 @@ ul {
 }
 h2 {
   line-height: 50px;
+  font-size: 52px;
+  font-weight: 700;
 }
 
 img {
@@ -68,12 +70,11 @@ select {
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: var(--white);
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
-  
 }
 
 /*Section1 start*/
@@ -88,7 +89,7 @@ body{
 #section1 .board {
   background-color: var(--white);
   height: 200x;
-  width: 400px;
+  width: 600px;
   position: absolute;
   top: 80px;
   display: inline-block;
@@ -98,8 +99,6 @@ body{
 }
 
 #section1 .board h2 {
-  font-size: 52px;
-  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -127,10 +126,10 @@ body{
 }
 
 #section2 img {
-  width: 100%; /* Ensures each image takes up 100% of its grid cell */
+  width: 100%; 
   height: 100%;
-  object-fit: contain; /* Ensures the image covers the entire grid cell */
-  object-position: center; /* Centers the image within its grid cell */
+  object-fit: contain; 
+  object-position: center; 
 }
 
 #section2 > div:nth-child(2) {
@@ -145,9 +144,42 @@ body{
   justify-content: center;
 }
 
-
+#section2 h2 {
+  margin-bottom: 20px;
+}
 
 /*Section2 end*/
+
+@media (max-width: 1300px) {
+  #section2 > div:nth-child(1) {
+    height: 280px;
+  }
+
+  #section2 > div:nth-child(2) {
+    height: 280px;
+  }
+
+  
+}
+
+@media (max-width: 1080px) {
+  #section2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #section2 > div:nth-child(1) {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 0;
+  }
+
+  #section2 > div:nth-child(2) {
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 0;
+  }
+}
 
 @media (max-width: 768px) {
   /*Section1 start*/
@@ -165,6 +197,28 @@ body{
 
   /*Section1 end*/
 }
+
+@media (max-width:610px){
+  #section2 > div:nth-child(1) {
+    height: 200px;
+  }
+
+}
+
+
+@media (max-width:500px){
+  #section2 > div:nth-child(1) {
+    display: none;
+  }
+
+
+  #section2 > div:nth-child(2) {
+    border-radius: 40px;
+    height: auto;
+    padding:30px 20px;
+  }
+}
+
 
 @media (max-width: 365px) {
   /*Section1 start*/
