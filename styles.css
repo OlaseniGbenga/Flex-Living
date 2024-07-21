@@ -108,7 +108,7 @@ body {
   position: absolute;
   bottom: -20px;
   left: calc(50% - 350px);
-  
+
   background-color: var(--white);
   display: flex;
   justify-content: center;
@@ -125,7 +125,6 @@ body {
 }
 
 #section1 span:nth-child(1) {
- 
   border: none;
 }
 
@@ -212,6 +211,88 @@ body {
 
 /*Section2 end*/
 
+/*Section3 start*/
+#section3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#section3 p {
+  margin-top: 20px;
+}
+
+
+/* Carousel start*/
+.carouselContainer {
+  display: flex;
+  margin: 50px  0;
+  overflow: hidden;
+  justify-content: start;
+ 
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+  padding:0 65px;
+}
+
+
+
+.carousel {
+  background-color: var(--dark-white);
+  border-radius: 40px;
+  border-bottom-left-radius: 5px;
+  padding: 40px;
+  flex: 0 0 60vw;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.carouselProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.carouselProfile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.carouselProfile > div {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.carousel-track ul {
+  display: flex;
+  gap: 30px;
+}
+
+/*Section3 end*/
+
+.courselButton {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#section3 button {
+  width: 30px;
+  height: 30px;
+  background-color: var(--green2);
+  border-radius: 5px;
+  border: none;
+}
+
+
 @media (max-width: 1300px) {
   /*Section2 start*/
   #section2 > div:nth-child(1) {
@@ -222,6 +303,9 @@ body {
     height: 280px;
   }
   /*Section2 end*/
+
+
+
 }
 
 @media (max-width: 1080px) {
@@ -244,7 +328,24 @@ body {
   }
 
   /*Section2 end*/
+
+  .carousel {
+   
+    min-width: 547px;
+    height: 250px;
+   
+    padding: 40px;
+  }
 }
+
+
+@media (max-width: 950px) {
+  .carousel {
+    flex: 0 0 60vw;
+  }
+}
+
+
 
 @media (max-width: 768px) {
   /*Section1 start*/
@@ -265,6 +366,18 @@ body {
   }
 
   /*Section1 end*/
+
+
+
+
+}
+
+
+@media (max-width: 650px) {
+  .carousel {
+    flex: 0 0 60vw;
+    padding: 20px;
+  }
 }
 
 @media (max-width: 610px) {
