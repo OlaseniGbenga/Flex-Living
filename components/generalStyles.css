@@ -1,0 +1,76 @@
+/* Remove default styles start */
+a {
+    text-decoration: none;
+    color: inherit; /* Optionally remove default link color */
+  }
+  
+  ul,
+  ol {
+    list-style: none;
+  }
+  
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  code,
+  address,
+  hr,
+  dl,
+  dd,
+  menu,
+  nav,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  h2 {
+    line-height: 50px;
+    font-size: 52px;
+    font-weight: 700;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+  
+  /* Remove default styles end */
+  /* root start */
+  :root {
+    /* Primary colors */
+    --green: #49735a;
+    --white: #ffffff;
+    --dark-white: #f2f0f2;
+    --black: #000000;
+    --green2: #064749;
+  }
+  /* root end */
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--white);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

@@ -1,81 +1,6 @@
 @import "./components/Header/HeaderStyles.css";
 @import "./components/Footer/Footer.css";
-
-/* Remove default styles start */
-a {
-  text-decoration: none;
-  color: inherit; /* Optionally remove default link color */
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-code,
-address,
-hr,
-dl,
-dd,
-menu,
-nav,
-ul {
-  margin: 0;
-  padding: 0;
-}
-h2 {
-  line-height: 50px;
-  font-size: 52px;
-  font-weight: 700;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-input,
-button,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
-}
-
-/* Remove default styles end */
-/* root start */
-:root {
-  /* Primary colors */
-  --green: #49735a;
-  --white: #ffffff;
-  --dark-white: #f2f0f2;
-  --black: #000000;
-  --green2: #064749;
-}
-/* root end */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--white);
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+@import "./components/generalStyles.css";
 
 /*Section1 start*/
 #section1 {
@@ -223,24 +148,21 @@ body {
   margin-top: 20px;
 }
 
-
 /* Carousel start*/
 .carouselContainer {
   display: flex;
-  margin: 50px  0;
+  margin: 50px 0;
   overflow: hidden;
   justify-content: start;
- 
+  align-self: flex-start;
 }
 
 .carousel-track {
   display: flex;
   gap: 20px;
   transition: transform 0.5s ease;
-  padding:0 65px;
+  padding: 0 65px;
 }
-
-
 
 .carousel {
   background-color: var(--dark-white);
@@ -270,7 +192,6 @@ body {
   flex-direction: column;
 }
 
-
 .carousel-track ul {
   display: flex;
   gap: 30px;
@@ -292,7 +213,6 @@ body {
   border: none;
 }
 
-
 @media (max-width: 1300px) {
   /*Section2 start*/
   #section2 > div:nth-child(1) {
@@ -303,9 +223,6 @@ body {
     height: 280px;
   }
   /*Section2 end*/
-
-
-
 }
 
 @media (max-width: 1080px) {
@@ -328,24 +245,13 @@ body {
   }
 
   /*Section2 end*/
-
-  .carousel {
-   
-    min-width: 547px;
-    height: 250px;
-   
-    padding: 40px;
-  }
 }
-
 
 @media (max-width: 950px) {
   .carousel {
     flex: 0 0 60vw;
   }
 }
-
-
 
 @media (max-width: 768px) {
   /*Section1 start*/
@@ -366,12 +272,38 @@ body {
   }
 
   /*Section1 end*/
+  /*Section2 start*/
 
+  #section2 {
+    padding-right: 1.875rem;
+    padding-left: 1.875rem;
+  }
 
+  /*Section2 end*/
 
+  /*Section3 start*/
 
+  #section3 {
+    align-items: start;
+    
+  }
+  #section3 p, #section3 h2 {
+    padding-right: 1.875rem;
+    padding-left: 1.875rem;
+  }
+
+  .carousel-track {
+    padding-right: 1.875rem;
+    padding-left: 1.875rem;
+
+  }
+
+  .courselButton {
+    align-self: center;
+    
+  }
+  /*Section3 end*/
 }
-
 
 @media (max-width: 650px) {
   .carousel {
