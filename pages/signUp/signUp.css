@@ -1,5 +1,84 @@
 @import "../../components/generalStyles.css";
+img {
+  /* margin-top: 1rem;*/
 
-body{
-    
+  margin: 0.625rem 3.75rem;
+  margin-bottom: 4rem;
+}
+h1 {
+  padding-left: 30vw;
+
+  margin-bottom: 1rem;
+}
+
+#signUpForm {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30vw;
+  padding-right: 30vw;
+  gap: 0.5rem;
+}
+#signUpForm .inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#signUpForm span input {
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  background-color: var(--dark-white);
+  border: none;
+  color: var(--greeen);
+}
+
+form input::placeholder {
+  color: var(--green);
+}
+
+#checkbox {
+  display: flex;
+
+  width: 100%;
+}
+
+#checkbox input {
+  width:  2rem;
+  margin-right: 1rem;
+  background-color: var(--dark-white);
+  color: var(--dark-white);
+  cursor: pointer;
+  
+}
+
+button {
+  background-color: var(--green);
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--white);
+  
+}
+
+
+
+
+
+ .terms{
+    padding-left: 30vw;
+    padding-right: 30vw;
+}
+
+
+
+
+@media (max-width: 670px) {
+  h1 {
+    padding-left: 10vw;
+  }
+
+  #signUpForm {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
 }
