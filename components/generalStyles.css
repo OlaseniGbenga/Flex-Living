@@ -1,5 +1,6 @@
 /* Remove default styles start */
 a {
+  cursor: pointer;
     text-decoration: none;
     color: inherit; /* Optionally remove default link color */
   }

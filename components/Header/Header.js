@@ -11,7 +11,7 @@ export class Header extends HTMLElement {
         <nav id="destop-nav">
           <ul>
             <li>Home</li>
-            <li>LandLords</li>
+           <li><a href="./pages/signUp/signUp.html">Sign Up</a></li>
             <li>Blog</li>
             <li>Contacts</li>
           </ul>
