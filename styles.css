@@ -1,6 +1,7 @@
+@import "./components/generalStyles.css";
 @import "./components/Header/HeaderStyles.css";
 @import "./components/Footer/Footer.css";
-@import "./components/generalStyles.css";
+@import "./components/Carousel/Carousel.css";
 
 /*Section1 start*/
 #section1 {
@@ -89,6 +90,15 @@
 }
 
 /*Section1 end*/
+.house {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 50px;
+}
+
+.house-properties {
+  display: flex;
+}
 
 /*Section2 start*/
 #section2 {
@@ -137,6 +147,7 @@
 /*Section2 end*/
 
 /*Section3 start*/
+
 #section3 {
   display: flex;
   flex-direction: column;
@@ -148,63 +159,6 @@
   margin-top: 20px;
 }
 
-/* Carousel start*/
-.carouselContainer {
-  display: flex;
-  margin: 50px 0;
-  overflow: hidden;
-  justify-content: start;
-  align-self: flex-start;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease;
-  padding: 0 65px;
-}
-
-.carousel {
-  background-color: var(--dark-white);
-  border-radius: 40px;
-  border-bottom-left-radius: 5px;
-  padding: 40px;
-  flex: 0 0 60vw;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.carouselProfile {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.carouselProfile img {
-  width: 80px;
-  height: 80px;
-  border-radius: 100%;
-}
-
-.carouselProfile > div {
-  margin-left: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.carousel-track ul {
-  display: flex;
-  gap: 30px;
-}
-
-/*Section3 end*/
-
-.courselButton {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
 #section3 button {
   width: 30px;
   height: 30px;
@@ -212,7 +166,7 @@
   border-radius: 5px;
   border: none;
 }
-
+/*Section3 end*/
 @media (max-width: 1300px) {
   /*Section2 start*/
   #section2 > div:nth-child(1) {
@@ -285,9 +239,9 @@
 
   #section3 {
     align-items: start;
-    
   }
-  #section3 p, #section3 h2 {
+  #section3 p,
+  #section3 h2 {
     padding-right: 1.875rem;
     padding-left: 1.875rem;
   }
@@ -295,12 +249,10 @@
   .carousel-track {
     padding-right: 1.875rem;
     padding-left: 1.875rem;
-
   }
 
   .courselButton {
     align-self: center;
-    
   }
   /*Section3 end*/
 }

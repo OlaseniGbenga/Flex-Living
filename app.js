@@ -50,10 +50,10 @@ const testimonyArray = [
 
 customElements.define("carousel-car", Carousel);
 
-
-const carousel = document.querySelector('carousel-car');
-carousel.data = testimonyArray;
-console.log(carousel.data)
+// const carousel = document.querySelector("carousel-car");
+// console.log(carousel)
+// carousel.data = testimonyArray;
+// console.log(carousel.data);
 
 const carouselTrack = document.querySelector(".carousel-track");
 const carouselItems = document.querySelectorAll(".carousel");

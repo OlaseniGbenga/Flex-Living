@@ -1,0 +1,56 @@
+/* Carousel start*/
+.carouselContainer {
+    display: flex;
+    margin: 50px 0;
+    overflow: hidden;
+    justify-content: start;
+    align-self: flex-start;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    padding: 0 65px;
+  }
+  
+  .carousel {
+    background-color: var(--dark-white);
+    border-radius: 40px;
+    border-bottom-left-radius: 5px;
+    padding: 40px;
+    flex: 0 0 60vw;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .carouselProfile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .carouselProfile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+  }
+  
+  .carouselProfile > div {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .carousel-track ul {
+    display: flex;
+    gap: 30px;
+  }
+  
+
+  
+  .courselButton {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
