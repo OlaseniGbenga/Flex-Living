@@ -1,0 +1,17 @@
+{
+  "name": "flex-living",
+  "version": "1.0.0",
+  "description": "Flex-living is peer to peer accomodation market place where users can rent and put there place for rent.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint"
+  },
+  "author": "Gbenga Olaseni",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
+    "globals": "^15.9.0"
+  }
+}
