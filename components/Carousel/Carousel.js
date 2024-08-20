@@ -25,7 +25,7 @@ export class Carousel extends HTMLElement {
  
   connectedCallback() {
     // this.innerHTML = `${this.elements}`;
-    this.innerHTML = `hi`;
+    this.innerHTML = "hi";
     console.log(this.data)
   }
 }
