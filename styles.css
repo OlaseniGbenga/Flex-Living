@@ -111,6 +111,7 @@
 
 .house-img img {
   height: 100%;
+ 
 }
 
 .house-details {
@@ -311,12 +312,21 @@ height: auto;
    
   }
 
+  .house-img img {
+    width: 100%;
+   
+  }
+
 
   .house-details {
 
     border-top-right-radius: 0;
+    gap: 1rem;
 
   }
+
+
+  
 
   #section3 {
     align-items: start;
@@ -351,6 +361,10 @@ height: auto;
     height: 200px;
   }
   /*Section2 end*/
+
+  .house-details ul {
+    flex-direction: column;
+   }
 }
 
 @media (max-width: 500px) {
@@ -365,6 +379,8 @@ height: auto;
     padding: 30px 20px;
   }
   /*Section2 end*/
+
+  
 }
 
 @media (max-width: 365px) {
@@ -374,5 +390,7 @@ height: auto;
     width: 80vw;
     padding: 0.625rem;
   }
+
+  
   /*Section1 end*/
 }

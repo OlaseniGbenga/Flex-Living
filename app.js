@@ -2,6 +2,8 @@ import { Header } from "./components/Header/Header.js";
 import { Footer } from "./components/Footer/Footer.js";
 import { Carousel } from "./components/Carousel/Carousel.js";
 
+
+
 // function toggleMenu() {
 //   hamburgerMenuId.classList.toggle('mobileNavDisplay');
 //   cancelMenuId.classList.toggle('mobileNavDisplay');
@@ -82,3 +84,7 @@ function moveCarousel(direction) {
 
 prevBtn.addEventListener("click", () => moveCarousel("prev"));
 nextBtn.addEventListener("click", () => moveCarousel("next"));
+
+
+
+

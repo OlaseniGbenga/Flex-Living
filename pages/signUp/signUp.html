@@ -15,7 +15,6 @@
   </head>
   <body>
     <img src="../../media/images/logo.png" alt="" />
-   
 
     <form id="signUpForm" action="">
       <h1>Create your account</h1>
@@ -27,30 +26,36 @@
         <label for="lastName">Last name:</label>
         <input type="text" name="lastName" placeholder="Owodele" />
       </span>
+
+      
       <span class="inputWrapper">
         <label for="email">Email:</label>
         <input type="email" name="email" placeholder="gbenga@gmail.com" />
       </span>
+
       <span class="inputWrapper">
         <label for="password">Password:</label>
         <input type="password" name="password" placeholder="******" />
       </span>
       <span id="checkbox">
-        <input type="checkbox" name="email" placeholder="gbenga@gmail.com" />
-        <p >I want to receive updates about offers, news, city launches, and
-          exclusive deals</p>
+        <input type="checkbox" name="checkbox"  />
+        <p>
+          I want to receive updates about offers, news, city launches, and
+          exclusive deals
+        </p>
       </span>
-      <button>Create account</button>
+      <button id="createAccount">Create account</button>
     </form>
     <div class="terms">
-      <a href="../signIn/signIn.html" id="login">Already have an account? <span>  Sign in </span></a>
-      <p class="agreement" >
-        By creating an account you agree to our
-       
-      </p>
+      <a href="../signIn/signIn.html" id="login"
+        >Already have an account? <span> Sign in </span></a
+      >
+      <p class="agreement">By creating an account you agree to our</p>
       <p>
-        <a class="green">Terms of Service </a> and <a class="green">Privacy Policy</a>
+        <a class="green">Terms of Service </a> and
+        <a class="green">Privacy Policy</a>
       </p>
     </div>
+    <script type="module" src="signUp.js"></script>
   </body>
 </html>

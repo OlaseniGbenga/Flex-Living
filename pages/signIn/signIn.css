@@ -11,7 +11,7 @@ h1 {
 
 }
 
-#signUpForm {
+#signUpForm,#signInForm {
   display: flex;
   flex-direction: column;
 
@@ -23,14 +23,14 @@ h1 {
   align-items: center;
   
 }
-#signUpForm .inputWrapper {
+#signUpForm .inputWrapper,#signInForm .inputWrapper{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 30rem;
 
 }
-#signUpForm span input {
+#signUpForm span input,#signInForm span input {
   padding: 0.5rem 2rem;
   border-radius: 10px;
   background-color: var(--dark-white);
@@ -65,6 +65,7 @@ form button {
   cursor: pointer;
   color: var(--white);
 }
+
 
 .terms {
     text-align: center;

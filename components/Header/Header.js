@@ -1,3 +1,8 @@
+import { app } from "../../firebase/firebase.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+
+
 export class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -11,7 +16,7 @@ export class Header extends HTMLElement {
         <nav id="destop-nav">
           <ul>
             <li>Home</li>
-           <li><a href="./pages/signUp/signUp.html">Sign Up</a></li>
+           <li><a id="signUpLink"  href="./pages/signUp/signUp.html">Sign Up</a></li>
             <li>Blog</li>
             <li>Contacts</li>
           </ul>
@@ -55,5 +60,35 @@ export class Header extends HTMLElement {
 
     hamburgerMenuId.addEventListener("click", toggleMenu);
     cancelMenuId.addEventListener("click", toggleMenu);
+
+    // Update header based on authentication state
+    this.updateHeader();
+  }
+
+
+  async updateHeader() {
+    // const signUpLink = this.querySelector("#signUpLink");
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      const signUpLink = this.querySelector("#signUpLink");
+
+      if (user) {
+      
+        signUpLink.textContent = "Log Out";
+        signUpLink.href = "#"; 
+        signUpLink.addEventListener("click", () => {
+          signOut(auth).then(() => {
+            window.location.reload(); 
+          }).catch((error) => {
+            console.error("Sign out error:", error);
+          });
+        });
+      } else {
+        
+        signUpLink.textContent = "Sign In";
+        signUpLink.href = "./pages/signIn/signIn.html";
+      }
+    });
   }
 }
