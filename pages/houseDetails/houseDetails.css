@@ -48,18 +48,30 @@
 }
 
 #section2 {
-  padding: 0.625rem 3.75rem;
+  padding: 3rem 3.75rem;
 }
 
 /* section 2 start */
 #section2 {
   display: flex;
+  gap: 3rem;
 }
 
 .house-info {
-  background-color: red;
-  height: 40px;
+ 
+display: flex;
+flex-direction: column;
+gap: 2rem;
   width: 55vw;
+}
+
+.house-info ul {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.house-info li {
+  display: flex;
 }
 
 .booking-info {
@@ -70,6 +82,11 @@
   flex-direction: column;
   gap: 2.5rem;
   border-radius: 0.625rem;
+}
+
+#rent {
+  font-weight: 700;
+  font-size: 36px;
 }
 
 .booking-info-1,
@@ -132,6 +149,16 @@
   align-items: center;
   text-align: center;
 }
+
+.book a {
+  padding: 10px 20px;
+  background-color: var(--green);
+  border-radius: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.625rem;
+  
+}
 /* section 2 end */
 
 @media (max-width: 1000px) {
@@ -182,8 +209,16 @@
   }
 }
 
-@media (max-width: 365px) {
+@media (max-width: 400px) {
   #section2 {
     padding: 0.625rem;
   }
+
+  .booking-info {
+
+    padding: 2.5rem 1rem;
+  
+  }
+
+
 }
