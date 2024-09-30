@@ -10,13 +10,13 @@ export class Header extends HTMLElement {
       <section>
         <img
           class="logo"
-          src="./media/images/logo.png"
+          src="/media/images/logo.png"
           alt="Flex living logo"
         />
         <nav id="destop-nav">
           <ul>
-            <li>Home</li>
-           <li><a id="signUpLink"  href="./pages/signUp/signUp.html">Sign Up</a></li>
+            <li><a href="/index.html">Home</a></li>
+           <li><a id="signUpLink"  href="/pages/signUp/signUp.html">Sign Up</a></li>
             <li>Blog</li>
             <li>Contacts</li>
           </ul>
@@ -25,13 +25,13 @@ export class Header extends HTMLElement {
         <img
           id="hamburgerMenuId"
           class="hamburgerMenu"
-          src="./media/svg/hamburgerMenu.svg"
+          src="/media/svg/hamburgerMenu.svg"
           alt="hamburger menu"
         />
         <img
           id="cancelMenuId"
           class="cancelMenu mobileNavDisplay"
-          src="./media/svg/cancel.svg"
+          src="/media/svg/cancel.svg"
           alt="Close menu"
         />
       </section>
@@ -75,15 +75,15 @@ export class Header extends HTMLElement {
 
       if (user) {
       
-        signUpLink.textContent = "Log Out";
-        signUpLink.href = "#"; 
-        signUpLink.addEventListener("click", () => {
-          signOut(auth).then(() => {
-            window.location.reload(); 
-          }).catch((error) => {
-            console.error("Sign out error:", error);
-          });
-        });
+        signUpLink.textContent = "My account";
+        signUpLink.href = "./pages/myAccount/myAccount.html"; 
+        // signUpLink.addEventListener("click", () => {
+        //   signOut(auth).then(() => {
+        //     window.location.reload(); 
+        //   }).catch((error) => {
+        //     console.error("my Account error:", error);
+        //   });
+        // });
       } else {
         
         signUpLink.textContent = "Sign In";

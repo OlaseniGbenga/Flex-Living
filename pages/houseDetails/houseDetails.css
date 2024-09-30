@@ -1,0 +1,189 @@
+@import "../../components/Footer/Footer.css";
+@import "../../components/Header/HeaderStyles.css";
+@import "../../components/generalStyles.css";
+
+#section1 {
+  display: flex;
+  gap: 5px;
+}
+
+.main-image {
+  height: 480px;
+  width: 66vw;
+  overflow: hidden;
+  background-image: url("../../1.jpg");
+  background-position: center center;
+  border-radius: 10px;
+}
+
+.group-image {
+  height: 480px;
+  width: 34vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.group-container-1 {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  gap: 5px;
+}
+
+.group-1-child-1 {
+  background-image: url("../../1.jpg");
+  background-position: center center;
+  border-radius: 10px;
+  height: 100%;
+  width: 50%;
+}
+
+.group-1-child-2 {
+  background-image: url("../../1.jpg");
+  border-radius: 10px;
+  background-position: center center;
+  height: 100%;
+  width: 50%;
+}
+
+#section2 {
+  padding: 0.625rem 3.75rem;
+}
+
+/* section 2 start */
+#section2 {
+  display: flex;
+}
+
+.house-info {
+  background-color: red;
+  height: 40px;
+  width: 55vw;
+}
+
+.booking-info {
+  background-color: var(--dark-white);
+  padding: 2.5rem;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  border-radius: 0.625rem;
+}
+
+.booking-info-1,
+.booking-info-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stay-period {
+  display: flex;
+  justify-content: space-between;
+}
+
+.move-in,
+.move-out {
+  background-color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.625rem;
+  display: flex;
+  justify-content: center;
+}
+
+.stay-period input {
+  border: 0;
+  position: relative;
+}
+
+.stay-period input::placeholder {
+  color: var(--black);
+}
+
+.stay-period input[type="date"]::-webkit-inner-spin-button,
+.stay-period input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+.stay-period .date {
+  width: 100px;
+}
+
+.average-rent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* section 2 end */
+
+@media (max-width: 1000px) {
+  #section2 {
+    flex-direction: column;
+  }
+
+  .house-info {
+    width: 100%;
+  }
+
+  .booking-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 769px) {
+  #section1 {
+    flex-direction: column;
+  }
+
+  .main-image {
+    width: 100%;
+  }
+
+  .group-image {
+    width: 100%;
+  }
+
+  #section2 {
+    padding: 0.625rem 1.875rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .group-image {
+    height: auto;
+  }
+  .group-container-1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .group-1-child-1,
+  .group-1-child-2 {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 365px) {
+  #section2 {
+    padding: 0.625rem;
+  }
+}

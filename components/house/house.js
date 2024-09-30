@@ -21,20 +21,25 @@ export class CustomHouseElement extends HTMLElement {
   async fetchData() {
     const db = getFirestore(app);
     const querySnapshot = await getDocs(collection(db, "house"));
-    console.log(querySnapshot);
 
     const data = querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
 
+    console.log(data);
+
     return data;
+  }
+
+  newPage(id) {
+    window.location.href = `pages/houseDetails/houseDetails.html?${id}`;  
   }
 
   render(data) {
     // Define the HTML template for each house
     const houseTemplate = (house) => `
-      <div class="house">
+      <div  id="${house.id}" class="house">
         <div style="background-color: ${"red"}" class="house-img">
           <img src="${house.picture || "./house.jpg"}" alt="">
         </div>
@@ -195,5 +200,14 @@ height: auto;
 
     // Set the inner HTML of the element
     this.shadowRoot.innerHTML = template;
+
+    data.forEach((house) => {
+      const houseElement = this.shadowRoot.querySelector(`#${house.id}`);
+      if (houseElement) {
+        houseElement.addEventListener("click", () => {
+          this.newPage(house.id);
+        });
+      }
+    });
   }
 }

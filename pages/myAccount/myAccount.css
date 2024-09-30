@@ -1,0 +1,41 @@
+@import "../../components/generalStyles.css";
+@import "../../components/Header/HeaderStyles.css";
+@import "../../components/Footer/Footer.css";
+
+#section1 {
+  padding: 0.625rem 3.75rem;
+  display: flex;
+  gap: 4rem;
+
+}
+.img-container {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.account-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--green2);
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.account-info p {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--dark-white);
+}
+
+
+
+
+@media (max-width: 768px) {
+  #section1 {
+    padding: 0.625rem 1.875rem;
+  }
+}

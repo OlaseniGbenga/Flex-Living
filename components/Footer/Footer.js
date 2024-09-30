@@ -6,7 +6,7 @@ export class Footer extends HTMLElement {
       <section>
         <img
           class="logo"
-          src="./media/images/logo.png"
+          src="/media/images/logo.png"
           alt="Flex living logo"
         />
         <div>
@@ -15,16 +15,16 @@ export class Footer extends HTMLElement {
             <ul class="socail" style="padding: 0">
               <li>
                 <a href="#"
-                  ><img src="./media/svg/facebook.svg" alt="facebook logo"
+                  ><img src="/media/svg/facebook.svg" alt="facebook logo"
                 /></a>
               </li>
               <li>
                 <a href="#"
-                  ><img src="./media/svg/linkedIn.svg" alt="linkedInogo"
+                  ><img src="/media/svg/linkedIn.svg" alt="linkedInogo"
                 /></a>
               </li>
               <li>
-                <a href="#"><img src="./media/svg/x.svg" alt="x logo" /></a>
+                <a href="#"><img src="/media/svg/x.svg" alt="x logo" /></a>
               </li>
             </ul>
             <p>© 2021 Flex Living</p>
