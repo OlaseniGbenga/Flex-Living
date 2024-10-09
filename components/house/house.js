@@ -33,45 +33,45 @@ export class CustomHouseElement extends HTMLElement {
   }
 
   newPage(id) {
-    window.location.href = `pages/houseDetails/houseDetails.html?${id}`;  
+    window.location.href = `pages/houseDetails/houseDetails.html?id=${id}`;
   }
 
   render(data) {
     // Define the HTML template for each house
     const houseTemplate = (house) => `
-      <div  id="${house.id}" class="house">
+      <div  id="${house?.id}" class="house">
         <div style="background-color: ${"red"}" class="house-img">
-          <img src="${house.picture || "./house.jpg"}" alt="">
+          <img src="${house?.picture || "./house.jpg"}" alt="">
         </div>
         <div class="house-details">
-          <p class="house-name">${house.title || "No name"}</p>
+          <p class="house-name">${house?.title || "No name"}</p>
           <ul>
             <li>
               <img src="./media/svg/bed.svg" alt="bedroom icon" />
-              <p>${house.apartmentUtil.room || "0"} bedroom${
-      house.apartmentUtil.room > 1 ? "s" : ""
+              <p>${house?.apartmentUtil?.room || "0"} bedroom${
+      house?.apartmentUtil?.room > 1 ? "s" : ""
     }</p>
             </li>
             <li>
               <img src="./media/svg/bathroom.svg" alt="bathroom icon" />
-              <p>${house.apartmentUtil.bathRoom || "0"} bathroom${
-      house.apartmentUtil.bathRoom > 1 ? "s" : ""
+              <p>${house?.apartmentUtil?.bathRoom || "0"} bathroom${
+      house?.apartmentUtil?.bathRoom > 1 ? "s" : ""
     }</p>
             </li>
             <li>
               <img style="width: 1.25rem;" src="./media/svg/wifi.svg" alt="wifi icon" />
-              <p>${house.apartmentUtil.wifi || "0"} wifi${
-      house.apartmentUtil.wifi > 1 ? "s" : ""
+              <p>${house?.apartmentUtil?.wifi || "0"} wifi${
+      house?.apartmentUtil?.wifi > 1 ? "s" : ""
     }</p>
             </li>
           </ul>
           <p class="available-date"> ${
-            house.availableDate
-              ? "Available" + house.availableDate
+            house?.availableDate
+              ? "Available" + house?.availableDate
               : "Not avaialable"
           }</p>
           <p class="price">from <span>&#8364;</span>${
-            house.price || "0"
+            house?.price || "0"
           } /month</p>
         </div>
       </div>

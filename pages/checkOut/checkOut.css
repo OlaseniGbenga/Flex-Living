@@ -1,0 +1,53 @@
+@import "../../components/Footer/Footer.css";
+@import "../../components/Header/HeaderStyles.css";
+@import "../../components/generalStyles.css";
+
+.section1 {
+ 
+  width: 50vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.card-detail {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.card-detail span{
+    width: 30%;
+}
+
+button {
+    width: 30%;
+   margin: auto;
+   background-color: var(--green);
+   border: none;
+   border-radius: 2px;
+   padding: 0.5rem 1rem;
+   color: var(--white);
+   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .card-detail {
+        flex-direction: column;
+    }
+
+    .card-detail span {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width:400px){
+    .section1 {
+        width: 80vw;
+    }
+}

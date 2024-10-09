@@ -26,13 +26,7 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     signUpLink.textContent = "My account";
     signUpLink.href = "./pages/myAccount/myAccount.html";
-    // signUpLink.addEventListener("click", () => {
-    //   signOut(auth).then(() => {
-    //     window.location.reload();
-    //   }).catch((error) => {
-    //     console.error("my Account error:", error);
-    //   });
-    // });
+
   } else {
     signUpLink.textContent = "Sign In";
     signUpLink.href = "./pages/signIn/signIn.html";

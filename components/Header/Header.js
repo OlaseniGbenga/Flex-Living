@@ -1,7 +1,9 @@
 import { app } from "../../firebase/firebase.js";
-import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
-
-
+import {
+  getAuth,
+  signOut,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
 export class Header extends HTMLElement {
   connectedCallback() {
@@ -65,7 +67,6 @@ export class Header extends HTMLElement {
     this.updateHeader();
   }
 
-
   async updateHeader() {
     // const signUpLink = this.querySelector("#signUpLink");
     const auth = getAuth(app);
@@ -74,18 +75,9 @@ export class Header extends HTMLElement {
       const signUpLink = this.querySelector("#signUpLink");
 
       if (user) {
-      
         signUpLink.textContent = "My account";
-        signUpLink.href = "./pages/myAccount/myAccount.html"; 
-        // signUpLink.addEventListener("click", () => {
-        //   signOut(auth).then(() => {
-        //     window.location.reload(); 
-        //   }).catch((error) => {
-        //     console.error("my Account error:", error);
-        //   });
-        // });
+        signUpLink.href = "/pages/myAccount/myAccount.html";
       } else {
-        
         signUpLink.textContent = "Sign In";
         signUpLink.href = "./pages/signIn/signIn.html";
       }

@@ -1,0 +1,12 @@
+@import "../signIn/signIn.css";
+@import "../../components/Footer/Footer.css";
+@import "../../components/Header/HeaderStyles.css";
+
+
+textarea {
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    background-color: var(--dark-white);
+    border: none;
+    color: var(--greeen);
+}

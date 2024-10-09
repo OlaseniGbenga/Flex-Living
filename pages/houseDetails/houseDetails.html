@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="houseDetails.css" />
   </head>
-  <body>
+  <body id="protectedContent" style="display: none;">
     <main-header></main-header>
     <section id="section1">
       <div class="main-image"></div>
@@ -33,18 +33,22 @@
     <section id="section2">
       <div class="house-info">
         <div>
-          <h2>Rhoncus suspendisse</h2>
-          <p>London, Notting Hill</p>
+          <h2 id="title">Rhoncus suspendisse</h2>
+          <p id="location">London, Notting Hill</p>
         </div>
 
         <ul>
           <li>
             <img src="../../media/svg/bed.svg" alt="bedroom icon" />
+            <p id="bedroom"></p>
             <p>bedroom</p>
+           
           </li>
           <li>
             <img src="../../media/svg/bathroom.svg" alt="bathroom icon" />
+            <p id="bathroom"></p>
             <p>bathroom</p>
+           
           </li>
           <li>
             <img
@@ -52,12 +56,14 @@
               src="../../media/svg/wifi.svg"
               alt="wifi icon"
             />
+            <p id="wifi"></p>
             <p>wifi</p>
+         
           </li>
         </ul>
         <div>
           <h3>Desription</h3>
-          <p>
+          <p id="description">
             A truly global city, London has long been considered a cutting-edge
             metropolis and hub for culture, style and finance. With each
             borough, Tube zone and neighborhood of London sporting its own vibe
@@ -156,8 +162,9 @@
         </div>
 
         <div class="book">
-          <a href="#">Continue booking</a>
-          <p>
+
+          <button id="book">Proceed to making payment</button>
+           <p>
             When you book this apartment, your reservation will be cofirmed
             instantly
           </p>

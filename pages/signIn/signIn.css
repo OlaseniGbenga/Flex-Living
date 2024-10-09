@@ -11,7 +11,7 @@ h1 {
 
 }
 
-#signUpForm,#signInForm {
+#signUpForm,#signInForm, #houseForm {
   display: flex;
   flex-direction: column;
 
@@ -23,14 +23,14 @@ h1 {
   align-items: center;
   
 }
-#signUpForm .inputWrapper,#signInForm .inputWrapper{
+#signUpForm .inputWrapper,#signInForm .inputWrapper, #houseForm .inputWrapper{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 30rem;
 
 }
-#signUpForm span input,#signInForm span input {
+#signUpForm span input,#signInForm span input,#houseForm span input {
   padding: 0.5rem 2rem;
   border-radius: 10px;
   background-color: var(--dark-white);
@@ -94,3 +94,22 @@ form button {
     margin-left: 0.5rem;
   }
   
+  @media (max-width: 670px) {
+    #signInForm .inputWrapper,
+    #houseForm .inputWrapper,
+    #signInForm h1,
+    #houseForm h1,
+    #checkbox {
+      width: 25rem;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    #signInForm .inputWrapper,
+    #signInForm h1,
+    #houseForm .inputWrapper,
+    #houseForm h1,
+    #checkbox {
+      width: 300px;
+    }
+  }
