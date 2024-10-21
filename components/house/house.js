@@ -16,6 +16,13 @@ export class CustomHouseElement extends HTMLElement {
 
   connectedCallback() {
     this.fetchData().then((data) => this.render(data));
+
+    document.querySelector("#searchForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const city = e.target.city.value;
+      alert(city)
+    });
+    
   }
 
   async fetchData() {
@@ -198,6 +205,7 @@ height: auto;
       ${housesHtml}
     `;
 
+    
     // Set the inner HTML of the element
     this.shadowRoot.innerHTML = template;
 
