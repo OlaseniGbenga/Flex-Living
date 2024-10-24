@@ -1,6 +1,6 @@
-const houseTemplate = (house, handleOpen) => {
+const houseTemplate = (house) => {
   return `
-      <div id="${house.id}" onclick='(${handleOpen.toString()})(${JSON.stringify(house)})' class="house">
+      <div id="${house.id}"  class="house">
           <div class="house-img">
             <img src="${house?.picture}" alt="${
     house?.title || "House Image"

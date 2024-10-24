@@ -3,6 +3,7 @@ import { Footer } from "../../components/Footer/Footer.js";
 
 import houseTemplate from "./houseTemplate.js";
 import fetchData from "./fetchData.js";
+import deleteHouse from "./delete.js";
 
 customElements.define("main-header", Header);
 customElements.define("main-footer", Footer);
@@ -10,9 +11,10 @@ customElements.define("main-footer", Footer);
 const housesPerPage = 2;
 let currentPage = 1;
 
+const textLoading = document.getElementById("textLoading");
 const loading = document.getElementById("loading");
 const control = document.getElementById("pagination-controls");
-
+let selectedHouseId;
 const display = async () => {
   const houses = await fetchData(loading, control);
 
@@ -23,15 +25,19 @@ const display = async () => {
     const end = start + housesPerPage;
     const housesToShow = houses?.data?.slice(start, end);
     control.style.display = "flex";
-     
-    const handleOpen = () => {
-      document.getElementById("modal").style.display = "block";
-    };
-    const housesHtml = housesToShow
-      ?.map((house) => houseTemplate(house, handleOpen))
-      ?.join("");
+
+    const housesHtml = housesToShow?.map(houseTemplate)?.join("");
     const houseContainer = document.querySelector("#house-container");
     houseContainer.innerHTML = housesHtml;
+
+    // Attach click event listener to each house element
+    document.querySelectorAll(".house").forEach((element) => {
+      element.addEventListener("click", (e) => {
+        const houseData = e.currentTarget.id;
+        selectedHouseId = houseData; // Store the ID of the clicked house
+        document.getElementById("modal").style.display = "block";
+      });
+    });
 
     const btn = document
       .querySelector("#pageNumbersContainer")
@@ -82,14 +88,14 @@ const display = async () => {
     document.getElementById("modal").style.display = "none";
   };
 
-  const handleDelete = ()=>{
-    alert("close");
-  } 
-  
-  
   const closeModal = document.getElementById("close-modal");
   const no = document.getElementById("no");
   const yes = document.getElementById("yes");
+
+  const handleDelete = async () => {
+    await deleteHouse(selectedHouseId, yes, no, closeModal, textLoading);
+    handleClose()
+  };
 
   closeModal.addEventListener("click", handleClose);
   no.addEventListener("click", handleClose);
