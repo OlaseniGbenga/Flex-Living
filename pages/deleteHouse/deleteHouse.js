@@ -1,103 +1,106 @@
 import { Header } from "../../components/Header/Header.js";
 import { Footer } from "../../components/Footer/Footer.js";
-import data from "./data.js";
+
+import houseTemplate from "./houseTemplate.js";
+import fetchData from "./fetchData.js";
 
 customElements.define("main-header", Header);
 customElements.define("main-footer", Footer);
 
-const housesPerPage = 2; // Number of houses to display per page
+const housesPerPage = 2;
 let currentPage = 1;
 
-const houseTemplate = (house) => {
-  return `
-    <div class="house">
-        <div class="house-img">
-          <img src="/house.jpg" alt="${house?.title || "House Image"}" />
-        </div>
-        <div class="house-details">
-          <p class="house-name">${house?.title || "Unknown Title"}</p>
-          <ul>
-            <li>
-              <img src="/media/svg/bed.svg" alt="bedroom icon" />
-              <p>${house?.apartmentUtil?.room || "N/A"}</p>
-            </li>
-            <li>
-              <img src="/media/svg/bathroom.svg" alt="bathroom icon" />
-              <p>${house?.apartmentUtil?.bathRoom || "N/A"}</p>
-            </li>
-            <li>
-              <img style="width: 1.25rem" src="/media/svg/wifi.svg" alt="wifi icon" />
-              <p>${
-                house?.apartmentUtil?.wifi
-                  ? house.apartmentUtil.wifi + " wifi"
-                  : "No wifi"
-              }</p>
-            </li>
-          </ul>
-          <p class="available-date">${
-            house?.available ? "Available" : "Not available"
-          }</p>
-          <p class="price">from <span>&#8364;</span>${
-            house?.price || 0
-          } /month</p>
-        </div>
-    </div>
-    `;
-};
+const loading = document.getElementById("loading");
+const control = document.getElementById("pagination-controls");
 
-const renderHouses = (page) => {
-  const start = (page - 1) * housesPerPage;
-  const end = start + housesPerPage;
-  const housesToShow = data.slice(start, end);
+const display = async () => {
+  const houses = await fetchData(loading, control);
 
-  const housesHtml = housesToShow.map(houseTemplate).join("");
-  const houseContainer = document.querySelector("#house-container");
-  houseContainer.innerHTML = housesHtml;
+  const numOfPages = Math.ceil(houses.count / housesPerPage);
 
- const btn=   document.querySelector("#pageNumbersContainer").querySelectorAll("button");
- btn.forEach((btn,i) => {
- if (i+1 === currentPage){
-  btn.disabled = true;
- } else {
-  btn.disabled = false;
- }
- })
+  const renderHouses = (page) => {
+    const start = (page - 1) * housesPerPage;
+    const end = start + housesPerPage;
+    const housesToShow = houses?.data?.slice(start, end);
+    control.style.display = "flex";
+     
+    const handleOpen = () => {
+      document.getElementById("modal").style.display = "block";
+    };
+    const housesHtml = housesToShow
+      ?.map((house) => houseTemplate(house, handleOpen))
+      ?.join("");
+    const houseContainer = document.querySelector("#house-container");
+    houseContainer.innerHTML = housesHtml;
 
-  // Update pagination info
+    const btn = document
+      .querySelector("#pageNumbersContainer")
+      .querySelectorAll("button");
+    btn.forEach((btn, i) => {
+      if (i + 1 === currentPage) {
+        btn.disabled = true;
+      } else {
+        btn.disabled = false;
+      }
+    });
 
-  document.getElementById("prev-page").disabled = page === 1;
-  document.getElementById("next-page").disabled =
-    page === Math.ceil(data.length / housesPerPage);
-};
+    // Update pagination info
 
-const numOfPages = Math.ceil(data.length / housesPerPage);
-const pageNumbersContainer = document.getElementById("pageNumbersContainer");
-for ( let i = 1; i <= numOfPages; i++) {
-  const button = document.createElement("button");
-  button.textContent = i;
+    document.getElementById("prev-page").disabled = page === 1;
+    document.getElementById("next-page").disabled =
+      page === Math.ceil(houses?.count / housesPerPage);
+  };
 
-  button.addEventListener("click", () => {
-    currentPage = i;
-    renderHouses(currentPage);
-   
+  const pageNumbersContainer = document.getElementById("pageNumbersContainer");
+  for (let i = 1; i <= numOfPages; i++) {
+    const button = document.createElement("button");
+    button.textContent = i;
+
+    button.addEventListener("click", () => {
+      currentPage = i;
+      renderHouses(currentPage);
+    });
+    pageNumbersContainer.appendChild(button);
+  }
+
+  // Event listeners for pagination buttons
+  document.getElementById("prev-page").addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderHouses(currentPage);
+    }
   });
-  pageNumbersContainer.appendChild(button);
-}
 
-// Event listeners for pagination buttons
-document.getElementById("prev-page").addEventListener("click", () => {
-  if (currentPage > 1) {
-    currentPage--;
+  document.getElementById("next-page").addEventListener("click", () => {
+    if (currentPage < Math.ceil(houses?.count / housesPerPage)) {
+      currentPage++;
+      renderHouses(currentPage);
+    }
+  });
+
+  const handleClose = () => {
+    document.getElementById("modal").style.display = "none";
+  };
+
+  const handleDelete = ()=>{
+    alert("close");
+  } 
+  
+  
+  const closeModal = document.getElementById("close-modal");
+  const no = document.getElementById("no");
+  const yes = document.getElementById("yes");
+
+  closeModal.addEventListener("click", handleClose);
+  no.addEventListener("click", handleClose);
+  yes.addEventListener("click", handleDelete);
+
+  // Initial render
+  if (houses.data.length > 0) {
     renderHouses(currentPage);
+  } else {
+    const section1 = document.getElementById("house-container");
+    section1.innerHTML = "<p>None</p>";
   }
-});
-
-document.getElementById("next-page").addEventListener("click", () => {
-  if (currentPage < Math.ceil(data.length / housesPerPage)) {
-    currentPage++;
-    renderHouses(currentPage);
-  }
-});
-
-// Initial render
-renderHouses(currentPage);
+};
+display();

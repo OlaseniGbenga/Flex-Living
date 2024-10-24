@@ -15,7 +15,13 @@
   </head>
   <body>
     <main-header></main-header>
-    <section id="section1" style="background-color: red">
+    <section id="section1">
+      <img
+        style="display: none; justify-self: center; margin: 140px"
+        id="loading"
+        src="../../media/gif/loading.gif"
+        alt="Loading"
+      />
       <div id="house-container"></div>
       <div id="pagination-controls">
         <button id="prev-page" disabled>Previous</button>
@@ -23,6 +29,21 @@
         <button id="next-page">Next</button>
       </div>
     </section>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="question">
+          <p>Are you sure you want to delete</p>
+          <span id="close-modal" class="close">&times;</span>
+        </div>
+
+        <div class="yesno">
+          <button id="yes">Yes</button>
+          <button id="no">No</button>
+        </div>
+        <div id="modal-body"></div>
+      </div>
+    </div>
     <main-footer></main-footer>
     <script type="module" src="deleteHouse.js"></script>
   </body>
