@@ -4,6 +4,8 @@ import {
   getFirestore,
   collection,
   getDocs,
+  limit,
+  query,
 } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
 // Define a class for the custom element
@@ -17,17 +19,12 @@ export class CustomHouseElement extends HTMLElement {
   connectedCallback() {
     this.fetchData().then((data) => this.render(data));
 
-    document.querySelector("#searchForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const city = e.target.city.value;
-      alert(city)
-    });
-    
+  
   }
 
   async fetchData() {
     const db = getFirestore(app);
-    const querySnapshot = await getDocs(collection(db, "house"));
+    const querySnapshot = await getDocs(query(collection(db, "house"),limit(4)));
 
     const data = querySnapshot.docs.map((doc) => ({
       id: doc.id,
@@ -205,7 +202,6 @@ height: auto;
       ${housesHtml}
     `;
 
-    
     // Set the inner HTML of the element
     this.shadowRoot.innerHTML = template;
 

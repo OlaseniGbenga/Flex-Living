@@ -1,22 +1,8 @@
-import { Header } from "../../components/Header/Header.js";
-import { Footer } from "../../components/Footer/Footer.js";
+import houseTemplate from "../pages/deleteHouse/houseTemplate.js";
 
-import houseTemplate from "./houseTemplate.js";
-import fetchData from "./fetchData.js";
-import deleteHouse from "./delete.js";
-
-customElements.define("main-header", Header);
-customElements.define("main-footer", Footer);
-
-const housesPerPage = 2;
-let currentPage = 1;
-
-const textLoading = document.getElementById("textLoading");
-const loading = document.getElementById("loading");
-const control = document.getElementById("pagination-controls");
-let selectedHouseId;
-const display = async () => {
-  const houses = await fetchData(loading, control);
+const pagination = async (housesPerPage, control, houses) => {
+  let currentPage = 1;
+  let selectedHouseId;
 
   const numOfPages = Math.ceil(houses.count / housesPerPage);
 
@@ -35,7 +21,7 @@ const display = async () => {
       element.addEventListener("click", (e) => {
         const houseData = e.currentTarget.id;
         selectedHouseId = houseData; // Store the ID of the clicked house
-        document.getElementById("modal").style.display = "block";
+        window.location.href = `pages/houseDetails/houseDetails.html?id=${selectedHouseId}`;
       });
     });
 
@@ -58,6 +44,7 @@ const display = async () => {
   };
 
   const pageNumbersContainer = document.getElementById("pageNumbersContainer");
+  pageNumbersContainer.innerHTML = "";
   for (let i = 1; i <= numOfPages; i++) {
     const button = document.createElement("button");
     button.textContent = i;
@@ -84,24 +71,6 @@ const display = async () => {
     }
   });
 
-  const handleClose = () => {
-    document.getElementById("modal").style.display = "none";
-  };
-
-  const closeModal = document.getElementById("close-modal");
-  const no = document.getElementById("no");
-  const yes = document.getElementById("yes");
-
-  const handleDelete = async () => {
-    await deleteHouse(selectedHouseId, yes, no, closeModal, textLoading);
-    handleClose();
-  };
-
-  closeModal.addEventListener("click", handleClose);
-  no.addEventListener("click", handleClose);
-  yes.addEventListener("click", handleDelete);
-
-  // Initial render
   if (houses.data.length > 0) {
     renderHouses(currentPage);
   } else {
@@ -109,4 +78,4 @@ const display = async () => {
     section1.innerHTML = "<p>None</p>";
   }
 };
-display();
+export default pagination;

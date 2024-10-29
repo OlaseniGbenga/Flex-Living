@@ -27,43 +27,35 @@
       <form id="searchForm" action="">
         <span>
           <img src="./media/svg/search.svg" alt="Search" />
-          <input type="text" name="city" id="" placeholder="Select a city" />
-        </span>
-        <span>
-          <img src="./media/svg/eva_calendar-fill.svg" alt="calender" />
           <input
-            class="date"
-            placeholder="Move-in"
+            id="search"
             type="text"
-            onfocus="(this.type='date')"
-            onblur="(this.type='text')"
-          />
-          <img
-            src="./media/svg/eva_arrow-forward-fill.svg"
-            alt="forward arrow"
-          />
-          <input
-            class="date"
-            placeholder="Move-in"
-            type="text"
-            onfocus="(this.type='date')"
-            onblur="(this.type='text')"
+            name="city"
+            id=""
+            placeholder="Select a city"
           />
         </span>
-        <span>
-          <img src="./media/svg/eva_people-fill.svg" alt="people icon" />
-          <input
-            type="number"
-            name="numberInput"
-            value="1"
-            min="1"
-            max="100"
-            step="1"
-          />
-        </span>
+
         <button id="searchButton">Search</button>
       </form>
     </section>
+    <img
+      style="display: none; justify-self: center; margin: 140px"
+      id="search-loading"
+      src="../../media/gif/loading.gif"
+      alt="Loading"
+    />
+
+    <!-- start -->
+    <div id="house-container"></div>
+    <div style="display: none;" id="pagination-controls">
+      <button id="prev-page" disabled>Previous</button>
+      <span id="pageNumbersContainer"></span>
+      <button id="next-page">Next</button>
+    </div>
+
+    
+    <!-- end -->
 
     <custom-house> </custom-house>
 
@@ -170,7 +162,7 @@
         </li>
       </ul>
     </section>
-    <!-- <carousel-car></carousel-car> -->
+   
     <main-footer></main-footer>
     <script type="module" src="./app.js"></script>
   </body>

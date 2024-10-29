@@ -2,6 +2,7 @@
 @import "./components/Header/HeaderStyles.css";
 @import "./components/Footer/Footer.css";
 @import "./components/Carousel/Carousel.css";
+@import "./components/pagination.css";
 
 /*Section1 start*/
 #section1 {
@@ -33,7 +34,7 @@
 #section1 form {
   position: absolute;
   bottom: -20px;
-  left: calc(50% - 350px);
+  left: calc(50% - 170px);
 
   background-color: var(--white);
   display: flex;
@@ -281,9 +282,9 @@
     font-weight: 700;
   }
 
-  #section1 form {
+  /* #section1 form {
     display: none;
-  }
+  } */
 
   /*Section1 end*/
   /*Section2 start*/

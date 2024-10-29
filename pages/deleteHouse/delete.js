@@ -17,6 +17,7 @@ const deleteHouse = async (houseId,  yes, no, cancel,loading,) => {
     cancel.disabled = true;
     const houseRef = doc(db, "house", houseId); // Replace "houses" with your collection name
     await deleteDoc(houseRef);
+    location.reload();
   } catch (error) {
     console.error("Error deleting document: ", error);
   } finally {
