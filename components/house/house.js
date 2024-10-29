@@ -31,7 +31,7 @@ export class CustomHouseElement extends HTMLElement {
       ...doc.data(),
     }));
 
-    console.log(data);
+
 
     return data;
   }
@@ -43,7 +43,7 @@ export class CustomHouseElement extends HTMLElement {
   render(data) {
     // Define the HTML template for each house
     const houseTemplate = (house) => `
-      <div  id="${house?.id}" class="house">
+      <div  data-house-id="${house.id}" class="house">
         <div style="background-color: ${"red"}" class="house-img">
           <img src="${house?.picture || "./house.jpg"}" alt="">
         </div>
@@ -206,7 +206,8 @@ height: auto;
     this.shadowRoot.innerHTML = template;
 
     data.forEach((house) => {
-      const houseElement = this.shadowRoot.querySelector(`#${house.id}`);
+      const houseElement = this.shadowRoot.querySelector(`[data-house-id="${house.id}"]`);
+
       if (houseElement) {
         houseElement.addEventListener("click", () => {
           this.newPage(house.id);
