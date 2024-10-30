@@ -149,6 +149,15 @@
   display: inline;
 } */
 
+.noneFound {
+  margin: 3.75rem 3.75rem;
+  color:var(--green);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
 .available-container {
   display: flex;
 }

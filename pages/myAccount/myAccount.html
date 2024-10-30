@@ -14,25 +14,43 @@
     <link rel="stylesheet" href="myAccount.css" />
   </head>
   <body>
-    <main-header></main-header>
-
+    <!-- <main-header></main-header> -->
     <section id="section1">
-      <div class="img-container"></div>
-      <ul class="account-infos">
-        <li class="account-info"><p>Name:</p> </li>
-        <li class="account-info"><p>Phone number:</p></li>
-        <li class="account-info"><p>Email:</p></li>
-        <li class="account-info"><p>Address:</p></li>
-        <li class="account-info"><p>Birthday:</p></li>
-        <li class="account-info"><p>Gender:</p></li>
-
-      </ul>
+      <div class="heading">
+        <img src="../../media/svg/notification.svg" alt="" />
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <div>
+            <strong><p>Gbenga</p></strong>
+            <p>08122341951</p>
+          </div>
+          <img src="../../media/svg/person.svg" alt="person" />
+        </div>
+      </div>
     </section>
-    <button id="logOut">Log Out</button>
-    <a href="../addHouse/addHouse.html">Add house</a>
-    <a href="../deleteHouse/deleteHouse.html">Delete  house</a>
-    
-    <main-footer></main-footer>
+
+    <section id="section2">
+      <div>
+        <p class="title">Account details</p>
+        <ul class="account-infos">
+          <li class="account-info"><p>Name:</p></li>
+          <li class="account-info"><p>Phone number:</p></li>
+          <li class="account-info"><p>Email:</p></li>
+          <li class="account-info"><p>Address:</p></li>
+          <li class="account-info"><p>Birthday:</p></li>
+          <li class="account-info"><p>Gender:</p></li>
+        </ul>
+      </div>
+      <div>
+        <p class="title">Action button</p>
+        <ul id="actionButton">
+          <li><button style="cursor: pointer; color: red; " id="logOut">Log Out</button></li>
+          <li><a href="../addHouse/addHouse.html">Add house</a></li>
+          <li><a href="../deleteHouse/deleteHouse.html">Delete house</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- <main-footer></main-footer> -->
 
     <script type="module" src="myAccount.js"></script>
   </body>

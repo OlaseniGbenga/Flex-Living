@@ -75,7 +75,7 @@ const pagination = async (housesPerPage, control, houses) => {
     renderHouses(currentPage);
   } else {
     const section1 = document.getElementById("house-container");
-    section1.innerHTML = "<p>None</p>";
+    section1.innerHTML = "<p class='noneFound'>No item match the search term</p>";
   }
 };
 export default pagination;

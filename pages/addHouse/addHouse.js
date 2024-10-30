@@ -27,7 +27,7 @@ document
     const description = event.target.description.value;
     const address = event.target.address.value;
     const city = event.target.city.value;
-    const state = event.target.state.value;
+    const state = event.target.state.value.toLowerCase();
     const zipCode = event.target.zipCode.value;
     const fileInput = event.target["main-picture"];
     const bathRoom = event.target.bathRoom.value;

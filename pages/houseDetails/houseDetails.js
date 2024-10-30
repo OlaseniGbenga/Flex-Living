@@ -24,6 +24,10 @@ const wifi = document.querySelector("#wifi");
 const bathRoom = document.querySelector("#bathroom");
 const book = document.querySelector("#book")
 const auth = getAuth(app);
+const amount = document.querySelector("#rent")
+const average = document.querySelector("#average")
+const booking = document.querySelector("#booking")
+const total = document.querySelector("#total")
 
 onAuthStateChanged(auth, (user) => {
  
@@ -55,6 +59,11 @@ const fetchHouseData = async (id) => {
       bedRoom.innerHTML = `${houseData.apartmentUtil.room}`;
       bathRoom.innerHTML = `${houseData.apartmentUtil.bathRoom}`;
       wifi.innerHTML = `${houseData.apartmentUtil.wifi}`;
+     amount.innerText = `$ ${houseData?.price}`
+     average.innerText = `$ ${houseData?.price}`
+     booking.innerText = `$ ${houseData?.price}`
+     total.innerText = `$ ${houseData?.price}`
+
       return houseData;
     } else {
       return null;

@@ -69,11 +69,7 @@ export class CustomHouseElement extends HTMLElement {
     }</p>
             </li>
           </ul>
-          <p class="available-date"> ${
-            house?.availableDate
-              ? "Available" + house?.availableDate
-              : "Not avaialable"
-          }</p>
+          <p class="available-date"> Available</p>
           <p class="price">from <span>&#8364;</span>${
             house?.price || "0"
           } /month</p>

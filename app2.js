@@ -1,4 +1,4 @@
-import { Header } from "./components/Header/Header.js";
+import { Header } from "./components/Header/Header.js"; 
 import { Footer } from "./components/Footer/Footer.js";
 import { CustomHouseElement } from "./components/house/house.js";
 import fetchData from "./components/fetchData.js";
@@ -12,7 +12,8 @@ const control = document.getElementById("pagination-controls")
 const  searchLoading = document.getElementById("search-loading");
 document.querySelector("#search").addEventListener("input", async (e) => {
   e.preventDefault();
-  const city = e.target.value.trim();
+  const city = e.target.value.toLowerCase().trim();
+ 
   const customHouse = document.querySelector("custom-house");
   if (city !== "") {
     customHouse.style.display = "none"; 
@@ -23,12 +24,14 @@ document.querySelector("#search").addEventListener("input", async (e) => {
   } else {
     control.style.display = "none";
     houseContainer.style.display = "none";
-    customHouse.style.display = "block"; // Show custom-house
+    customHouse.style.display = "block"; 
   }
+
+  alert(city)
 });
 
 
-//search result
+
 
 
 

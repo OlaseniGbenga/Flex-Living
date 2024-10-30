@@ -5,10 +5,22 @@ import {
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
+
+import {
+  getFirestore,
+  collection,
+  getDoc,
+  
+} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+
+
+
 import { Header } from "../../components/Header/Header.js";
 import { Footer } from "../../components/Footer/Footer.js";
 
 const auth = getAuth(app);
+const db = getFirestore(app);
+const snapshot = await getDoc(collection(db,))
 
 const logOut = document.querySelector("#logOut");
 logOut.addEventListener("click", async () => {
