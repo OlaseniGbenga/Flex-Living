@@ -22,7 +22,7 @@ const fetchData = async (loading,searchTerm) => {
   
       let housesQuery = query(
         collection(db, "house"),
-        orderBy("title"),
+        orderBy("location.state"),
         startAt(searchTerm),
         endAt(searchTerm + "\uf8ff"),
         //limit(housesPerPage)
@@ -33,7 +33,7 @@ const fetchData = async (loading,searchTerm) => {
         id: doc.id,
         ...doc.data(),
       }));
-  
+   console.log(data)
       const count = snapshot.size;
   
       return { data, count };

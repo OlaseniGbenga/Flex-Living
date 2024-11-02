@@ -1,7 +1,7 @@
 import { app } from "../../firebase/firebase.js";
 import {
   getAuth,
-  signOut,
+ 
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
@@ -39,8 +39,9 @@ export class Header extends HTMLElement {
       </section>
       <nav id="mobileNavId" class="mobileNav">
         <ul>
-          <li>Home</li>
-          <li>LandLords</li>
+           <li><a href="/index.html">Home</a></li>
+          <li><a id="signUpLink"  href="/pages/signUp/signUp.html">Sign Up</a></li>
+            
           <li>Blog</li>
           <li>Contacts</li>
         </ul>

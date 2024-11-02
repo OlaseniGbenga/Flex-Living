@@ -20,8 +20,8 @@
         <img src="../../media/svg/notification.svg" alt="" />
         <div style="display: flex; align-items: center; gap: 0.5rem">
           <div>
-            <strong><p>Gbenga</p></strong>
-            <p>08122341951</p>
+            <strong><p id="firstName"></p></strong>
+            <p id="phone"></p>
           </div>
           <img src="../../media/svg/person.svg" alt="person" />
         </div>
@@ -32,20 +32,20 @@
       <div>
         <p class="title">Account details</p>
         <ul class="account-infos">
-          <li class="account-info"><p>Name:</p></li>
-          <li class="account-info"><p>Phone number:</p></li>
-          <li class="account-info"><p>Email:</p></li>
-          <li class="account-info"><p>Address:</p></li>
-          <li class="account-info"><p>Birthday:</p></li>
-          <li class="account-info"><p>Gender:</p></li>
+          <li class="account-info"><p>Name:</p> <p id="name"></p></li>
+          <!-- <li class="account-info"><p>Phone number:</p><p id="number"></p></li> -->
+          <li class="account-info"><p>Email:</p><p id="email"></p></li>
+          <!-- <li class="account-info"><p>Address:</p>  <p id="address"></p></li>
+          <li class="account-info"><p>Birthday:</p> <p id="birthday"></p></li>
+          <li class="account-info"><p>Gender:</p>  <p id="gender"></p></li> -->
         </ul>
       </div>
       <div>
         <p class="title">Action button</p>
         <ul id="actionButton">
           <li><button style="cursor: pointer; color: red; " id="logOut">Log Out</button></li>
-          <li><a href="../addHouse/addHouse.html">Add house</a></li>
-          <li><a href="../deleteHouse/deleteHouse.html">Delete house</a></li>
+          <li style="display: none;" id="add"><a href="../addHouse/addHouse.html">Add house</a></li>
+          <li style="display: none;" id="delete"><a href="../deleteHouse/deleteHouse.html">Delete house</a></li>
         </ul>
       </div>
     </section>

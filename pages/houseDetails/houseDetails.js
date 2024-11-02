@@ -10,7 +10,6 @@ import {
 
 import {
   getAuth,
-
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
@@ -22,20 +21,18 @@ const location = document.querySelector("#location");
 const bedRoom = document.querySelector("#bedroom");
 const wifi = document.querySelector("#wifi");
 const bathRoom = document.querySelector("#bathroom");
-const book = document.querySelector("#book")
+const book = document.querySelector("#book");
 const auth = getAuth(app);
-const amount = document.querySelector("#rent")
-const average = document.querySelector("#average")
-const booking = document.querySelector("#booking")
-const total = document.querySelector("#total")
+const amount = document.querySelector("#rent");
+const average = document.querySelector("#average");
+const booking = document.querySelector("#booking");
+const total = document.querySelector("#total");
 
 onAuthStateChanged(auth, (user) => {
- 
-
   if (user) {
     protectedContent.style.display = "block";
   } else {
-    window.location.href ="../signIn/signIn.html"
+    window.location.href = "../signIn/signIn.html";
   }
 });
 
@@ -55,14 +52,15 @@ const fetchHouseData = async (id) => {
       title.innerHTML = houseData.title;
       description.innerHTML = houseData.description;
       mainImage.style.backgroundImage = `url(${houseData.picture})`;
+      console.log(1);
       location.innerHTML = `${houseData.location.address}, ${houseData.location.city}, ${houseData.location.state} state.`;
       bedRoom.innerHTML = `${houseData.apartmentUtil.room}`;
       bathRoom.innerHTML = `${houseData.apartmentUtil.bathRoom}`;
       wifi.innerHTML = `${houseData.apartmentUtil.wifi}`;
-     amount.innerText = `$ ${houseData?.price}`
-     average.innerText = `$ ${houseData?.price}`
-     booking.innerText = `$ ${houseData?.price}`
-     total.innerText = `$ ${houseData?.price}`
+      amount.innerText = `$ ${houseData?.price}`;
+      average.innerText = `$ ${houseData?.price}`;
+      booking.innerText = `$ ${houseData?.price}`;
+      total.innerText = `$ ${houseData?.price}`;
 
       return houseData;
     } else {
@@ -76,8 +74,8 @@ const fetchHouseData = async (id) => {
 const houseData = await fetchHouseData(id);
 console.log(houseData);
 
-book.addEventListener("click", ()=>{
-    window.location.href = `/pages/checkOut/checkOut.html?id=${id}`
-})
+book.addEventListener("click", () => {
+  window.location.href = `/pages/checkOut/checkOut.html?id=${id}`;
+});
 customElements.define("main-header", Header);
 customElements.define("main-footer", Footer);
